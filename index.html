@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumping Runner Game</title>
+    <link rel="stylesheet" href="stylee.css">
+</head>
+
+<body>
+
+    <div class="game-container">
+
+        <h1>🏃 Jumping Runner Game</h1>
+
+        <div class="score-board">
+            Score: <span id="score">0</span>
+        </div>
+
+        <div id="game">
+
+            <!-- Player -->
+         <div id="player">
+    <span>🏃‍♂️</span>
+</div>
+
+            <!-- Obstacle -->
+            <div id="obstacle">
+                🌵
+            </div>
+
+            <!-- Ground -->
+            <div id="ground"></div>
+
+            <!-- Game Over Screen -->
+            <div id="gameOver">
+                <h2>Game Over!</h2>
+                <p>Your Score: <span id="finalScore">0</span></p>
+                <button onclick="restartGame()">Restart Game</button>
+            </div>
+
+        </div>
+
+        <div class="instructions">
+            <p>Press <b>SPACE</b> or <b>↑ Arrow</b> to Jump</p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
