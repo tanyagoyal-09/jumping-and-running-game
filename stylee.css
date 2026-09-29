@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #87ceeb, #e0f7ff);
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.score-board {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Main Game Area */
+
+#game {
+    width: 800px;
+    height: 350px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        to bottom,
+        #87ceeb 0%,
+        #dff7ff 70%,
+        #90ee90 70%,
+        #90ee90 100%
+    );
+
+    border: 4px solid #222;
+    border-radius: 10px;
+}
+
+/* Player */
+
+#player {
+    width: 55px;
+    height: 55px;
+
+    position: absolute;
+
+    left: 100px;
+    bottom: 40px;
+
+    font-size: 45px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 5;
+}
+#player span {
+    display: inline-block;
+    transform: scaleX(-1);
+}
+/* Running animation */
+
+.running {
+    animation: runningAnimation 0.25s infinite alternate;
+}
+
+@keyframes runningAnimation {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-5px);
+    }
+}
+
+/* Jump animation */
+
+.jump {
+    animation: jumpAnimation 0.8s ease-out;
+}
+
+@keyframes jumpAnimation {
+
+    0% {
+        bottom: 40px;
+    }
+
+    50% {
+        bottom: 190px;
+    }
+
+    100% {
+        bottom: 40px;
+    }
+}
+
+/* Obstacle */
+
+#obstacle {
+    width: 45px;
+    height: 55px;
+
+    position: absolute;
+
+    right: -60px;
+    bottom: 40px;
+
+    font-size: 45px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ground */
+
+#ground {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 40px;
+
+    background: #4caf50;
+
+    border-top: 4px solid #388e3c;
+}
+
+/* Game Over */
+
+#gameOver {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    display: none;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    z-index: 10;
+}
+
+#gameOver h2 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+#gameOver p {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+#gameOver button {
+
+    padding: 12px 25px;
+
+    font-size: 18px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #ffcc00;
+
+    cursor: pointer;
+}
+
+#gameOver button:hover {
+    background: #ffaa00;
+}
+
+/* Instructions */
+
+.instructions {
+    margin-top: 15px;
+
+    font-size: 18px;
+
+    color: #333;
+}
